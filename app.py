@@ -8,50 +8,110 @@ st.set_page_config(page_title="🦋 Butterfly Classifier", page_icon="🦋", lay
 
 st.markdown("""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap');
-html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
-.hero { text-align: center; padding: 2.5rem 1rem 1rem; }
-.hero-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    background: linear-gradient(135deg, #2d6a4f, #95d5b2);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    line-height: 1.15;
-    margin-bottom: 0.4rem;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+html, body, [class*="css"]{
+    font-family:'Poppins',sans-serif;
 }
-.hero-sub { color: #6b7280; font-size: 1rem; }
-.result-card {
-    background: linear-gradient(135deg, #d8f3dc33, #b7e4c733);
-    border: 1.5px solid #74c69d88;
-    border-radius: 20px;
-    padding: 1.8rem 1.5rem;
-    text-align: center;
-    margin: 1.2rem 0;
+
+.main{
+    background: linear-gradient(135deg,#0f172a,#1e293b);
 }
-.species {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    color: #d8f3dc;
-    letter-spacing: 0.02em;
+
+.hero{
+    text-align:center;
+    padding:2rem 1rem;
 }
-.conf-label { color: #95d5b2; font-size: 1rem; font-weight: 600; margin-top: 0.3rem; }
-.top5-row {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 0.35rem 0; border-bottom: 1px solid #e5e7eb; font-size: 0.92rem;
+
+.hero-title{
+    font-size:3.2rem;
+    font-weight:700;
+    background:linear-gradient(90deg,#4ade80,#22d3ee);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
-.top5-row:last-child { border-bottom: none; }
-.rank { color: #9ca3af; width: 1.4rem; }
-.bar-wrap { flex: 1; height: 6px; background: #e5e7eb; border-radius: 99px; margin: 0 0.75rem; overflow: hidden; }
-.bar-fill { height: 100%; background: linear-gradient(90deg, #52b788, #2d6a4f); border-radius: 99px; }
-.pct { color: #374151; font-weight: 600; width: 3.2rem; text-align: right; }
+
+.hero-sub{
+    color:#cbd5e1;
+    font-size:1.05rem;
+}
+
+.result-card{
+    background:rgba(255,255,255,0.06);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:24px;
+    padding:25px;
+    text-align:center;
+    margin-top:15px;
+}
+
+.species{
+    font-size:2.2rem;
+    font-weight:700;
+    color:#4ade80;
+}
+
+.conf-label{
+    color:white;
+    font-size:1.1rem;
+    margin-top:10px;
+}
+
+.top5-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:10px 0;
+}
+
+.rank{
+    color:#94a3b8;
+    width:30px;
+}
+
+.bar-wrap{
+    flex:1;
+    height:8px;
+    background:#334155;
+    border-radius:999px;
+    overflow:hidden;
+}
+
+.bar-fill{
+    height:100%;
+    background:linear-gradient(90deg,#22c55e,#06b6d4);
+}
+
+.pct{
+    width:60px;
+    text-align:right;
+    color:white;
+}
+
+.stButton>button{
+    width:100%;
+    border-radius:15px;
+    height:50px;
+    font-size:16px;
+    font-weight:600;
+}
+
+[data-testid="stImage"] img{
+    border-radius:20px;
+    border:2px solid rgba(255,255,255,0.15);
+}
+
 </style>
 """, unsafe_allow_html=True)
 
 st.markdown("""
 <div class="hero">
-    <div class="hero-title">🦋 Butterfly Classifier</div>
-    <p class="hero-sub">Upload a butterfly photo — discover its species instantly</p>
+    <div class="hero-title">🦋 Butterfly Vision AI</div>
+    <p class="hero-sub">
+        Upload a butterfly image and let AI identify the species instantly
+    </p>
 </div>
 """, unsafe_allow_html=True)
 
@@ -97,9 +157,14 @@ if load_error:
     st.info("📂 Make sure `butterfly_model.onnx` and `class_names.json` are in the root of your GitHub repo.")
     st.stop()
 
-st.success(f"✅ Model ready — {len(class_names)} species loaded", icon="🦋")
+st.success(
+    f"AI Model Loaded Successfully • {len(class_names)} Species Available"
+)
 
 st.divider()
+
+st.markdown("### 📤 Upload Butterfly Image")
+
 uploaded = st.file_uploader("Upload a butterfly image", type=["jpg", "jpeg", "png", "webp"])
 
 if uploaded:
@@ -149,4 +214,10 @@ if uploaded:
             st.info("👆 Click **Identify Species** to classify")
 
 st.divider()
-st.markdown("<p style='text-align:center;color:#9ca3af;font-size:0.78rem;'>Butterfly Classifier · CNN · 75 Species</p>", unsafe_allow_html=True)
+st.markdown("""
+<hr>
+<div style='text-align:center;color:#94a3b8'>
+🦋 Butterfly Vision AI <br>
+Powered by CNN + ONNX Runtime
+</div>
+""", unsafe_allow_html=True)
