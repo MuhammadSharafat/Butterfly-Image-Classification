@@ -1,4 +1,4 @@
-#🦋 Butterfly Vision AI
+## 🦋 Butterfly Vision AI
 
 <p align="center">
   <strong>AI-powered butterfly species classification from images</strong>
