@@ -1,4 +1,4 @@
-## 🦋 Butterfly Vision AI
+# 🦋 Butterfly Vision AI
 
 <p align="center">
   <strong>AI-powered butterfly species classification from images</strong>
@@ -10,7 +10,7 @@
   <a href="https://github.com/MuhammadSharafat/Butterfly-Image-Classification">📦 GitHub Repository</a>
 </p>
 
-📌 Overview
+# 📌 Overview
 
 Butterfly Vision AI is a deep-learning image classification application that identifies butterfly species from an uploaded image.
 
@@ -18,7 +18,7 @@ The project uses a Convolutional Neural Network (CNN) for image classification a
 
 The current application supports 75 butterfly species.
 
-✨ Features
+# ✨ Features
 
  => 🦋 Butterfly species identification from images
 
@@ -38,7 +38,7 @@ The current application supports 75 butterfly species.
 
  =>🎨 Modern dark-themed user interface
 
-🧠 How It Works
+# 🧠 How It Works
 
 The application follows this pipeline:
 
@@ -66,7 +66,7 @@ Class Probabilities
       │
       └──► Top 5 Predictions
 
-🛠️ Technologies Used
+# 🛠️ Technologies Used
 
 Technology
 
@@ -104,7 +104,7 @@ Jupyter Notebook
 
 Model development and experimentation
 
-📂 Project Structure
+# 📂 Project Structure
 
 Butterfly-Image-Classification/
 │
@@ -124,7 +124,7 @@ Butterfly-Image-Classification/
 ├── requirements.txt                            # Python dependencies
 └── README.md                                   # Project documentation
 
-🚀 Run Locally
+# 🚀 Run Locally
 
 1. Clone the repository
 
@@ -153,13 +153,13 @@ streamlit run app.py
 
 The application will open in your browser at the local Streamlit address.
 
-🌐 Live Demo
+# 🌐 Live Demo
 
 Try the deployed application:
 
 https://butterfly-image-classification-ms3rdvz5jwqvagpqrthedo.streamlit.app/
 
-🖼️ Using the Application
+# 🖼️ Using the Application
 
  1. Open the Butterfly Vision AI web application.
 
@@ -173,7 +173,7 @@ https://butterfly-image-classification-ms3rdvz5jwqvagpqrthedo.streamlit.app/
 
  6. Check the Top 5 predictions for additional model outputs.
 
-📊 Model Inference
+# 📊 Model Inference
 
 For each uploaded image, the application:
 
@@ -191,7 +191,7 @@ For each uploaded image, the application:
 
  => Displays the Top 5 predictions with confidence percentages.
 
-📓 Model Development
+# 📓 Model Development
 
 The repository includes a Jupyter Notebook:
 
@@ -207,7 +207,7 @@ The corresponding class labels are stored in:
 
 class_names.json
 
-📦 Dependencies
+# 📦 Dependencies
 
 The deployed application uses:
 
@@ -218,7 +218,7 @@ Streamlit
 
 See requirements.txt for the project dependency list.
 
-🔮 Future Improvements
+# 🔮 Future Improvements
 
 Potential future improvements include:
 
@@ -238,7 +238,7 @@ Potential future improvements include:
 
  => ⚡ Further optimizing inference speed
 
-👨‍💻 Author
+# 👨‍💻 Author
 
 Mohammad Sharafat Alam Saki
 
