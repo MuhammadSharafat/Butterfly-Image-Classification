@@ -5,107 +5,87 @@
 </p>
 
 <p align="center">
-  <a href="https://butterfly-image-classification-ms3rdvz5jwqvagpqrthedo.streamlit.app/">🌐 Live Demo</a>
-  ·
-  <a href="https://github.com/MuhammadSharafat/Butterfly-Image-Classification">📦 GitHub Repository</a>
+  🌐 <a href="https://butterfly-image-classification-ms3rdvz5jwqvagpqrthedo.streamlit.app/">Live Demo</a>
+  &nbsp;·&nbsp;
+  📦 <a href="https://github.com/MuhammadSharafat/Butterfly-Image-Classification">GitHub Repository</a>
 </p>
 
-# 📌 Overview
+---
 
-Butterfly Vision AI is a deep-learning image classification application that identifies butterfly species from an uploaded image.
+## 📸 Web Application
 
-The project uses a Convolutional Neural Network (CNN) for image classification and an ONNX Runtime model for fast inference. A user can upload a butterfly image through the Streamlit web interface and receive the predicted species along with its confidence score and the Top 5 predictions.
+<p align="center">
+  <img src="assets/app-preview.png" alt="Butterfly Vision AI Web Application" width="900">
+</p>
 
-The current application supports 75 butterfly species.
+---
 
-# ✨ Features
+## 📌 Overview
 
- => 🦋 Butterfly species identification from images
+**Butterfly Vision AI** is a deep-learning image classification application that identifies butterfly species from an uploaded image.
 
- => 🤖 CNN-based image classification
+The project uses a **Convolutional Neural Network (CNN)** for image classification and an **ONNX Runtime** model for fast inference. Users can upload a butterfly image through the Streamlit web interface and receive the predicted species, confidence score, and Top 5 predictions.
 
- => ⚡ ONNX Runtime inference
+The current application supports **75 butterfly species**.
 
- => 🌐 Interactive Streamlit web application
+## ✨ Features
 
- => 📤 Supports JPG, JPEG, PNG, and WEBP images
+- 🦋 **Butterfly Species Identification** — Identify butterfly species from uploaded images.
+- 🤖 **CNN-Based Classification** — Uses a trained convolutional neural network.
+- ⚡ **Fast Inference** — Uses ONNX Runtime for efficient model inference.
+- 🌐 **Interactive Web Application** — Built with Streamlit.
+- 📤 **Multiple Image Formats** — Supports JPG, JPEG, PNG, and WEBP.
+- 🎯 **Confidence Score** — Displays the model's prediction confidence.
+- 📊 **Top 5 Predictions** — Shows the five highest-probability species.
+- 🎨 **Modern User Interface** — Clean dark-themed web interface.
+- 🧠 **75 Butterfly Species** — The deployed model can classify 75 species.
 
- => 🎯 Displays the predicted species and confidence score
+## 🧠 How It Works
 
- => 📊 Shows the Top 5 model predictions
+```text
+                    Butterfly Image
+                           │
+                           ▼
+                     Image Upload
+                           │
+                           ▼
+                    RGB Conversion
+                           │
+                           ▼
+                    Resize 150×150
+                           │
+                           ▼
+                 Pixel Normalization
+                           │
+                           ▼
+                    CNN Model
+                    (ONNX Runtime)
+                           │
+                           ▼
+                  Class Probabilities
+                       /       \
+                      /         \
+                     ▼           ▼
+            Best Prediction    Top 5
+            + Confidence     Predictions
+```
 
- => 💾 Uses a trained .onnx model for deployment
+## 🛠️ Technologies Used
 
- =>🎨 Modern dark-themed user interface
+| Technology | Purpose |
+|---|---|
+| **Python** | Core programming language |
+| **TensorFlow / Keras** | CNN model development and training |
+| **ONNX** | Model deployment format |
+| **ONNX Runtime** | Model inference |
+| **NumPy** | Numerical and image-array processing |
+| **Pillow** | Image loading and preprocessing |
+| **Streamlit** | Web application and user interface |
+| **Jupyter Notebook** | Model development and experimentation |
 
-# 🧠 How It Works
+## 📂 Project Structure
 
-The application follows this pipeline:
-
-Butterfly Image
-      │
-      ▼
-Image Upload
-      │
-      ▼
-RGB Conversion
-      │
-      ▼
-Resize to 150 × 150
-      │
-      ▼
-Normalize Pixel Values
-      │
-      ▼
-CNN Model (ONNX)
-      │
-      ▼
-Class Probabilities
-      │
-      ├──► Best Prediction
-      │
-      └──► Top 5 Predictions
-
-# 🛠️ Technologies Used
-
-Technology
-
-Purpose
-
-Python
-
-Core programming language
-
-TensorFlow / Keras
-
-CNN model development and training
-
-ONNX
-
-Model deployment format
-
-ONNX Runtime
-
-Model inference
-
-NumPy
-
-Numerical and image-array processing
-
-Pillow
-
-Image loading and preprocessing
-
-Streamlit
-
-Web application and user interface
-
-Jupyter Notebook
-
-Model development and experimentation
-
-# 📂 Project Structure
-
+```text
 Butterfly-Image-Classification/
 │
 ├── train/                                      # Training images
@@ -122,133 +102,140 @@ Butterfly-Image-Classification/
 │
 ├── app.py                                      # Streamlit application
 ├── requirements.txt                            # Python dependencies
+├── assets/
+│   └── app-preview.png                         # Web app screenshot
 └── README.md                                   # Project documentation
+```
 
-# 🚀 Run Locally
+## 🚀 Run Locally
 
-1. Clone the repository
+### 1. Clone the repository
 
+```bash
 git clone https://github.com/MuhammadSharafat/Butterfly-Image-Classification.git
 cd Butterfly-Image-Classification
+```
 
-2. Create a virtual environment
+### 2. Create a virtual environment
 
-Windows:
+**Windows**
 
+```bash
 python -m venv venv
 venv\Scripts\activate
+```
 
-macOS / Linux:
+**macOS / Linux**
 
+```bash
 python3 -m venv venv
 source venv/bin/activate
+```
 
-3. Install dependencies
+### 3. Install dependencies
 
+```bash
 pip install -r requirements.txt
+```
 
-4. Run the Streamlit application
+### 4. Run the application
 
+```bash
 streamlit run app.py
+```
 
 The application will open in your browser at the local Streamlit address.
 
-# 🌐 Live Demo
+## 🌐 Live Demo
 
 Try the deployed application:
 
-https://butterfly-image-classification-ms3rdvz5jwqvagpqrthedo.streamlit.app/
+**[Butterfly Vision AI — Live Demo](https://butterfly-image-classification-ms3rdvz5jwqvagpqrthedo.streamlit.app/)**
 
-# 🖼️ Using the Application
+## 🖼️ Using the Application
 
- 1. Open the Butterfly Vision AI web application.
+1. Open the Butterfly Vision AI web application.
+2. Upload a butterfly image.
+3. Click **Identify Species**.
+4. The model preprocesses the uploaded image.
+5. The ONNX model generates predictions.
+6. View the predicted butterfly species and confidence score.
+7. Check the Top 5 predictions for additional model outputs.
 
- 2. Upload a butterfly image.
-
- 3. Click Identify Species.
-
- 4. The model processes the image.
-
- 5. View the predicted butterfly species and confidence score.
-
- 6. Check the Top 5 predictions for additional model outputs.
-
-# 📊 Model Inference
+## 📊 Model Inference
 
 For each uploaded image, the application:
 
- => Converts the image to RGB.
+- Converts the image to RGB.
+- Resizes it to **150 × 150 pixels**.
+- Normalizes pixel values to the range **0–1**.
+- Sends the processed image to the ONNX model.
+- Calculates class probabilities.
+- Selects the highest-probability species.
+- Displays the Top 5 predictions with confidence percentages.
 
- => Resizes it to 150 × 150 pixels.
+## 📓 Model Development
 
- => Normalizes pixel values to the range 0–1.
+The repository includes the Jupyter Notebook:
 
- => Sends the processed image to the ONNX model.
-
- => Sorts the model's class probabilities.
-
- => Displays the highest-probability species.
-
- => Displays the Top 5 predictions with confidence percentages.
-
-# 📓 Model Development
-
-The repository includes a Jupyter Notebook:
-
+```text
 butterfly-multiclass-image-classification-cnn.ipynb
+```
 
-It contains the CNN-based multiclass butterfly image-classification workflow used to develop the model.
+The notebook contains the CNN-based multiclass butterfly image-classification workflow used for model development and experimentation.
 
-The trained model is exported to:
+The trained model is exported as:
 
+```text
 butterfly_model.onnx
+```
 
-The corresponding class labels are stored in:
+The corresponding butterfly class labels are stored in:
 
+```text
 class_names.json
+```
 
-# 📦 Dependencies
+## 📦 Dependencies
 
 The deployed application uses:
 
+```text
 Pillow
 NumPy
 ONNX Runtime
 Streamlit
+```
 
-See requirements.txt for the project dependency list.
+For the complete dependency list, see:
 
-# 🔮 Future Improvements
+```text
+requirements.txt
+```
 
-Potential future improvements include:
+## 🔮 Future Improvements
 
- => 📈 Improving classification accuracy
+- 📈 Improve classification accuracy.
+- 🔍 Add more butterfly species.
+- 📱 Improve mobile responsiveness.
+- 📚 Add detailed information about each butterfly species.
+- 📷 Add camera-based image capture.
+- 📊 Add model performance metrics and confusion matrix.
+- 🧠 Explore stronger CNN architectures and transfer learning.
+- ⚡ Further optimize inference speed.
 
- => 🔍 Adding more butterfly species
+## 👨‍💻 Author
 
- => 📱 Improving mobile responsiveness
+**Mohammad Sharafat Alam Saki**
 
- => 📚 Adding detailed information about each species
+**Computer Science & Technology**
 
- => 📷 Supporting camera-based image capture
+### 🔗 Project Links
 
- => 📊 Adding model performance metrics and confusion matrix
+- 📦 **GitHub:** https://github.com/MuhammadSharafat/Butterfly-Image-Classification
+- 🌐 **Live Demo:** https://butterfly-image-classification-ms3rdvz5jwqvagpqrthedo.streamlit.app/
 
- => 🧠 Exploring stronger CNN architectures and transfer learning
-
- => ⚡ Further optimizing inference speed
-
-# 👨‍💻 Author
-
-Mohammad Sharafat Alam Saki
-
-Computer Science & Technology
-
-Project Links
-
- => GitHub: https://github.com/MuhammadSharafat/Butterfly-Image-Classification
-
- => Live Demo: https://butterfly-image-classification-ms3rdvz5jwqvagpqrthedo.streamlit.app/
+---
 
 <p align="center">
   🦋 <strong>Butterfly Vision AI</strong><br>
